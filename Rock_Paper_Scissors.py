@@ -65,10 +65,19 @@ while LOOP is True:
 
     print ("Would you like to try again? Y/N")
 
+    REDO = True
     RETRY = input()
+    while REDO is True:
+        if ((RETRY == 'y') or (RETRY == 'Y')):
+            LOOP = True
+            REDO = False
+        elif ((RETRY == 'n') or (RETRY == 'N')):
+            LOOP = False
+            REDO = False
+        else:
+            print ("You have chosen an incorrect option. Please try again.")
+            RETRY = input()
+            REDO = True
 
-    if ((RETRY == 'y') or (RETRY == 'Y')):
-        LOOP = True
 
-    if ((RETRY == 'n') or (RETRY == 'N')):
-        LOOP = False
+print("Thank you for playing Rock, Paper, Scissors.")
